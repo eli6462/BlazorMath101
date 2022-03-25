@@ -1,0 +1,22 @@
+﻿@page "/sum"
+
+<h3>Sum</h3>
+
+<input type="text" class="TxtBox1" @bind="num1"/>
+<button class="BtnPlus" @onclick="add">+</button>
+<input type="text" class="TxtBox2" @bind="num2"/>
+<p>=</p>
+<input type="text" class="TxtSum" @bind="sum"/>
+
+@code {
+    private string num1 = "0";
+    private string num2 = "0";
+    private string sum = "0";
+
+    private void add()
+    {
+        int num1Int = int.Parse(num1);
+        int num2Int = int.Parse(num2);
+        sum = (num1Int + num2Int).ToString();
+    }
+}
