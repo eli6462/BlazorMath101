@@ -66,7 +66,7 @@
                     {            
                         for( int j = 0; j < intColumns; j++)
                         {
-                            <input class="matrixInput" type="text" />
+                            <input class="matrixInput" id="matrixBoxA@(i)_@(j)" @bind="matrixA[i,j]" type="text" />
                         }
                         <br />
                         
@@ -112,14 +112,20 @@
             </tr>
         </table>
     
-    </div>                
+    </div> <!--End of Matrix Div-->  
+    
+    <input class="testInput" type="text" @bind="testString"/>
 </center>
 
 @code {
-    private string? rows;
-    private string? columns;
+    public string? rows;
+    public string? columns;
     public int intRows = 0;
-    private int intColumns;
+    public int intColumns;
+
+    public int[,] matrixA;
+    public string[,] testMatrix;
+    public string testString = "test";
 
     //private bool hideBox {get;set;} = true;
 
@@ -128,6 +134,8 @@
     {
         intRows = int.Parse(rows);
         intColumns = int.Parse(columns);
+        matrixA = new int[intRows,intColumns];
+        testMatrix = new string [intRows,intColumns];
         //hideBox = !hideBox;
         //hideBox = !hideBox;
 
@@ -137,7 +145,15 @@
     {
         int rows = intRows;
         int columns = intColumns;
-        private int[,] matrixA = new int[//define,];
+        
+
+        for(int i = 0; i < matrixA.GetLength(0); i++)
+        {
+            for(int j = 0; j< matrixA.GetLength(1); j++)
+            {
+                testString += matrixA[i, j].ToString();
+            }
+        }
 
     }
 }
