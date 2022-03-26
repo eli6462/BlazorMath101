@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "s1CognNG9PAWJ0okaHz0KzvjYucjIbihJ5lxQbAH5td/ixhZJCAynqx315fpWwRxSHsVsa0IUN1V2E+jboCAJA==",
+  "dgSpecHash": "yM7MWgk/G6iJVgk1nrq0X07hG/ybE32XzS/88GnhZcuvhq6LUqYkpddPQf05lNV1+l9QO+ctRK9Z+ianS3u+AQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\User\\BlazorApp\\BlazorApp.csproj",
+  "projectFilePath": "C:\\Users\\User\\Documents\\GitHub\\BlazorMath101\\BlazorApp.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

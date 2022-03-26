@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\BlazorApp\\BlazorApp.csproj": {}
+    "C:\\Users\\User\\Documents\\GitHub\\BlazorMath101\\BlazorApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\BlazorApp\\BlazorApp.csproj": {
+    "C:\\Users\\User\\Documents\\GitHub\\BlazorMath101\\BlazorApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\BlazorApp\\BlazorApp.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\BlazorMath101\\BlazorApp.csproj",
         "projectName": "BlazorApp",
-        "projectPath": "C:\\Users\\User\\BlazorApp\\BlazorApp.csproj",
+        "projectPath": "C:\\Users\\User\\Documents\\GitHub\\BlazorMath101\\BlazorApp.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\BlazorApp\\obj\\",
+        "outputPath": "C:\\Users\\User\\Documents\\GitHub\\BlazorMath101\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

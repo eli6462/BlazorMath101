@@ -1,0 +1,143 @@
+﻿@page "/matrixOps"
+<head>
+<style>
+    table.setTable{
+        margin-top: 25px;
+    }
+    input.matrixParam{
+        width:30px;
+        height:25px;
+    }
+    p.regularText{
+        font-family:Arial;
+    }
+    #setText{
+        margin-top:20px;
+        margin-right:5px;
+    }
+    button.setBtn{
+        margin-top:5px;
+        border-radius:5px;
+        background-color:#4681f4;
+        color:white;
+    }
+    div.matrixes{
+        margin-top:25px;
+    }
+    input.matrixInput{
+        width:30px;
+        height:25px;
+    }
+    td.spacerTd{
+        width:60px;
+    }
+    
+</style>
+</head>
+
+<center>
+
+    <h3>MatrixOps</h3>
+
+    <!--Set Menu-->
+    <table class="setTable">
+        <tr>
+            <td><p class="regularText" id ="setText">Matrix rows:</p></td>
+            <td><input class ="matrixParam" @bind="rows" /></td>
+            <td style ="width:30px;"></td>
+            <td><p class="regularText" id ="setText">Matrix columns:</p></td>
+            <td><input class ="matrixParam" @bind="columns" /></td>
+        </tr>
+    </table>
+
+    <!--Set Menu Button-->
+    <button class="setBtn" @onclick="showMatrix">
+        Set Matrixes
+    </button>
+
+    <!--Matrixes-->
+    <div class="matrixes">
+        <table class ="matrixes">
+            <tr>
+                <td> <!--matrix A-->
+                    <center><p class="regularText">Matrix A</p></center>
+                    
+                    @for(int i = 0; i < intRows; i++)
+                    {            
+                        for( int j = 0; j < intColumns; j++)
+                        {
+                            <input class="matrixInput" type="text" />
+                        }
+                        <br />
+                        
+                    }
+                </td>
+
+                <td class ="spacerTd"><!--spacer-->
+                        <!-- + button-->
+                    <center><button class ="calcBtn" @onclick="add">+</button></center>
+                </td>
+
+                <td> <!--matrix B-->
+                    <center><p class="regularText">Matrix B</p></center>
+                    
+                    @for(int i = 0; i < intRows; i++)
+                    {            
+                        for( int j = 0; j < intColumns; j++)
+                        {
+                            <input class="matrixInput" type="text" />
+                        }
+                        <br />
+                        
+                    }
+                </td>
+
+                <td class ="spacerTd"><!--spacer-->
+                    <center><h4>=</h4></center>
+                </td>
+
+                <td> <!--matrix Result-->
+                    <center><p class="regularText">Result Matrix</p></center>
+                    
+                    @for(int i = 0; i < intRows; i++)
+                    {            
+                        for( int j = 0; j < intColumns; j++)
+                        {
+                            <input class="matrixInput" type="text" />
+                        }
+                        <br />
+                        
+                    }
+                </td>
+            </tr>
+        </table>
+    
+    </div>                
+</center>
+
+@code {
+    private string? rows;
+    private string? columns;
+    public int intRows = 0;
+    private int intColumns;
+
+    //private bool hideBox {get;set;} = true;
+
+
+    private void showMatrix()
+    {
+        intRows = int.Parse(rows);
+        intColumns = int.Parse(columns);
+        //hideBox = !hideBox;
+        //hideBox = !hideBox;
+
+    }
+
+    private void add()
+    {
+        int rows = intRows;
+        int columns = intColumns;
+        private int[,] matrixA = new int[//define,];
+
+    }
+}
