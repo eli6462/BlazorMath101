@@ -24,6 +24,9 @@
     div.matrixes{
         margin-top:25px;
     }
+    th.tableHead{
+        height:10px;
+    }
     input.matrixInput{
         width:30px;
         height:25px;
@@ -31,6 +34,19 @@
     td.spacerTd{
         width:60px;
     }
+    
+    button.calcBtn{
+        width:25px;
+        height:30px;
+    }
+    #addBtn{
+        margin-top:20%;
+    }
+    #subBtn{
+        margin-bottom:20%;
+        margin-top:10%;
+    }
+    
     input.testInput{
         width:600px
     }
@@ -62,9 +78,15 @@
     <div class="matrixes">
         <table class ="matrixes">
             <tr>
-                <td> <!--matrix A-->
-                    <center><p class="regularText">Matrix A</p></center>
-                                                         
+                <!--table head-->
+                <th class="tableHead"><center><p class="regularText">Matrix A</p></center></th>
+                <th class="tableHead"></th>
+                <th class="tableHead"><center><p class="regularText">Matrix B</p></center></th>
+                <th class="tableHead"></th>
+                <th class="tableHead"><center><p class="regularText">Result Matrix</p></center></th>
+            </tr>
+            <tr>
+                <td> <!--matrix A-->                                                                             
                     @if(matrixInitCheck == true)
                     {                          
                         for(int i = 0; i < matrixA.GetLength(0); i++)
@@ -79,15 +101,16 @@
                         }
                     }                                                               
                 </td>
-
+                <!-- operation buttons -->
                 <td class ="spacerTd"><!--spacer-->
                         <!-- + button-->
-                    <center><button class ="calcBtn" @onclick="add">+</button></center>
+                    <center><button class ="calcBtn" id="addBtn"@onclick="add">+</button></center>
+                    
+                        <!-- - button-->
+                        <center><button class ="calcBtn" id="subBtn" @onclick="sub">-</button></center>
                 </td>
 
-                <td> <!--matrix B-->
-                    <center><p class="regularText">Matrix B</p></center>
-                    
+                <td> <!--matrix B-->                                        
                     @if(matrixInitCheck == true)
                     {                          
                         for(int i = 0; i < matrixB.GetLength(0); i++)
@@ -107,8 +130,7 @@
                     <center><h4>=</h4></center>
                 </td>
 
-                <td> <!--matrix Result-->
-                    <center><p class="regularText">Result Matrix</p></center>
+                <td> <!--matrix Result-->                    
                     
                     @if(matrixInitCheck == true)
                     {                          
@@ -127,9 +149,9 @@
             </tr>
         </table>
     
-    </div> <!--End of Matrix Div-->  
+    </div> <!--End of Matrixes Div-->  
     
-    <input class="testInput" type="text" @bind="testString"/>
+    <!--<input class="testInput" type="text" @bind="testString"/>-->
 </center>
 
 @code {
@@ -162,15 +184,11 @@
 
     private void add()
     {
-        resultMatrix = BlazorApp.Handlers.MatrixHandler.addMatrixes(matrixA, matrixB);
-        /*
-        for(int i = 0; i < matrixA.GetLength(0); i++)
-        {
-            for(int j = 0; j< matrixA.GetLength(1); j++)
-            {
-                testString += matrixA[i, j].ToString();
-            }
-        }
-        */
+        resultMatrix = BlazorApp.Handlers.MatrixHandler.addMatrixes(matrixA, matrixB);       
+    }
+
+    private void sub()
+    {
+        resultMatrix = BlazorApp.Handlers.MatrixHandler.subMatrixes(matrixA, matrixB);
     }
 }
