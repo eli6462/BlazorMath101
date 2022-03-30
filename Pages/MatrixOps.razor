@@ -21,6 +21,9 @@
         background-color:#4681f4;
         color:white;
     }
+
+    /* matrixes */
+
     div.matrixes{
         margin-top:25px;
     }
@@ -46,10 +49,19 @@
         margin-bottom:20%;
         margin-top:10%;
     }
+    div.waitDiv{
+        height:30px;
+        width:60px;
+        border-radius:5px;
+        background-color:lightgrey;
+        margin-left:25%;
+    }
     
+    /*
     input.testInput{
         width:600px
     }
+    */
     
 </style>
 </head>
@@ -78,12 +90,12 @@
     <div class="matrixes">
         <table class ="matrixes">
             <tr>
-                <!--table head-->
-                <th class="tableHead"><center><p class="regularText">Matrix A</p></center></th>
-                <th class="tableHead"></th>
-                <th class="tableHead"><center><p class="regularText">Matrix B</p></center></th>
-                <th class="tableHead"></th>
-                <th class="tableHead"><center><p class="regularText">Result Matrix</p></center></th>
+                <!--table head (hidden)-->
+                <th class="tableHead" hidden ="@(!matrixInitCheck)"><center><p class="regularText">Matrix A</p></center></th>
+                <th class="tableHead" hidden ="@(!matrixInitCheck)"></th>
+                <th class="tableHead" hidden ="@(!matrixInitCheck)"><center><p class="regularText">Matrix B</p></center></th>
+                <th class="tableHead" hidden ="@(!matrixInitCheck)"></th>
+                <th class="tableHead" hidden ="@(!matrixInitCheck)"><center><p class="regularText">Result Matrix</p></center></th>
             </tr>
             <tr>
                 <td> <!--matrix A-->                                                                             
@@ -102,7 +114,7 @@
                     }                                                               
                 </td>
                 <!-- operation buttons -->
-                <td class ="spacerTd"><!--spacer-->
+                <td class ="spacerTd" hidden ="@(!matrixInitCheck)"><!--spacer (hidden)-->
                         <!-- + button-->
                     <center><button class ="calcBtn" id="addBtn"@onclick="add">+</button></center>
                     
@@ -126,11 +138,15 @@
                     }       
                 </td>
 
-                <td class ="spacerTd"><!--spacer-->
+                <td class ="spacerTd" hidden ="@(!matrixInitCheck)"><!--spacer (hidden) -->
                     <center><h4>=</h4></center>
                 </td>
-
-                <td> <!--matrix Result-->                    
+                <td hidden ="@(!resultMatrixInitCheck || !matrixInitCheck)"><!--wait indicator-->
+                    <cener><div class="waitDiv">
+                        <center>...</center>
+                        </div></cener>
+                </td>                
+                <td hidden ="@resultMatrixInitCheck"> <!--matrix Result-->                    
                     
                     @if(matrixInitCheck == true)
                     {                          
@@ -155,14 +171,12 @@
 </center>
 
 @code {
-    public string? rows;
-    public string? columns;
-    public int intRows = 0;
-    public int intColumns;
+    public string? rows,columns;    
+    public int intRows,intColumns;    
 
     public int[,] matrixA,matrixB,resultMatrix;    
     public string testString = "";
-    public bool matrixInitCheck = false;   
+    public bool matrixInitCheck = false,resultMatrixInitCheck = true;   
 
     //private bool hideBox {get;set;} = true;
 
@@ -176,6 +190,7 @@
         resultMatrix = new int[intRows,intColumns];        
 
         matrixInitCheck = true;
+        resultMatrixInitCheck = true;
 
         //hideBox = !hideBox;
         //hideBox = !hideBox;
@@ -184,11 +199,13 @@
 
     private void add()
     {
-        resultMatrix = BlazorApp.Handlers.MatrixHandler.addMatrixes(matrixA, matrixB);       
+        resultMatrix = BlazorApp.Handlers.MatrixHandler.addMatrixes(matrixA, matrixB);
+        resultMatrixInitCheck = false;
     }
 
     private void sub()
     {
         resultMatrix = BlazorApp.Handlers.MatrixHandler.subMatrixes(matrixA, matrixB);
+        resultMatrixInitCheck = false;
     }
 }
