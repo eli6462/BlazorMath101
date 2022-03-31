@@ -31,10 +31,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Documents/GitHub/BlazorMath101/Pages/MatrixOps.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWF0cml4T3BzLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/User/Documents/GitHub/BlazorMath101/Pages/Sum.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3VtLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -50,6 +46,10 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/User/Documents/GitHub/BlazorMath101/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Documents/GitHub/BlazorMath101/Pages/MatrixOps.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWF0cml4T3BzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-bcmsxwj9nb
 
 [C:/Users/User/Documents/GitHub/BlazorMath101/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=

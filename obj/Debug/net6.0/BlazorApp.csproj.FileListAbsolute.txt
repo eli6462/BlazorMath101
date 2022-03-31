@@ -25,3 +25,6 @@ C:\Users\User\Documents\GitHub\BlazorMath101\obj\Debug\net6.0\refint\BlazorApp.d
 C:\Users\User\Documents\GitHub\BlazorMath101\obj\Debug\net6.0\BlazorApp.pdb
 C:\Users\User\Documents\GitHub\BlazorMath101\obj\Debug\net6.0\BlazorApp.genruntimeconfig.cache
 C:\Users\User\Documents\GitHub\BlazorMath101\obj\Debug\net6.0\ref\BlazorApp.dll
+C:\Users\User\Documents\GitHub\BlazorMath101\bin\Debug\net6.0\MatBlazor.dll
+C:\Users\User\Documents\GitHub\BlazorMath101\obj\Debug\net6.0\BlazorApp.csproj.CopyComplete
+C:\Users\User\Documents\GitHub\BlazorMath101\obj\Debug\net6.0\scopedcss\Pages\MatrixOps.razor.rz.scp.css

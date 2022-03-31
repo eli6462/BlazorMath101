@@ -1,87 +1,6 @@
 ﻿@page "/matrixOps"
 <head>
 <style>
-    table.setTable{
-        margin-top: 25px;
-    }
-    input.matrixParam{
-        width:30px;
-        height:25px;
-    }
-    p.regularText{
-        font-family:Arial;
-    }
-    #setText{
-        margin-top:20px;
-        margin-right:5px;
-    }
-    button.setBtn{
-        margin-top:5px;
-        border-radius:5px;
-        background-color:#4681f4;
-        color:white;        
-        border: none;        
-    }
-    .setBtn:hover{
-        background-color:#3765BF;
-        box-shadow:1px 1px 3px #888888;
-        
-    }
-    .setBtn:active{
-        background-color:#2257BF;
-    }
-
-    /* matrixes */
-
-    div.matrixes{
-        margin-top:25px;
-    }
-    th.tableHead{
-        height:10px;
-    }
-    input.matrixInput{
-        width:30px;
-        height:25px;
-    }
-    td.spacerTd{
-        width:60px;
-    }
-    
-    button.calcBtn{
-        width:25px;
-        height:30px;
-        border-radius:5px;
-        color:#4681f4;
-        border: 2px solid #4681f4;        
-        background-color: white;
-    }
-    .calcBtn:hover{        
-        background-color:#4681f4;  
-        color:white;
-    }
-    .calcBtn:active{
-        background-color:#3765BF;
-    }
-    #addBtn{
-        margin-top:20%;
-    }
-    #subBtn{
-        margin-bottom:20%;
-        margin-top:10%;
-    }
-    div.waitDiv{
-        height:30px;
-        width:60px;
-        border-radius:5px;
-        background-color:lightgrey;
-        margin-left:25%;
-    }
-    
-    /*
-    input.testInput{
-        width:600px
-    }
-    */
     
 </style>
 </head>
@@ -93,18 +12,28 @@
     <!--Set Menu-->
     <table class="setTable">
         <tr>
+            <!-- (old)            
             <td><p class="regularText" id ="setText">Matrix rows:</p></td>
             <td><input class ="matrixParam" @bind="rows" /></td>
             <td style ="width:30px;"></td>
             <td><p class="regularText" id ="setText">Matrix columns:</p></td>
             <td><input class ="matrixParam" @bind="columns" /></td>
+            -->
+            <td>
+                <MatTextField @bind-Value="@rows" Label="Rows" Outlined="true" Style="height:35px;width:100px;"></MatTextField>
+                <br />
+                <MatTextField Style="height:35px;width:100px;margin-top:10px;"  @bind-Value="@columns" Label="Columns" Outlined="true" ></MatTextField>
+            </td>
+            
         </tr>
     </table>
 
     <!--Set Menu Button-->
-    <button class="setBtn" @onclick="showMatrix">
-        Set Matrixes
-    </button>
+    <!-- (my old button) <button class="setBtn" @onclick="showMatrix"> Set Matrixes</button>  -->
+        <MatButton style="background-color:#4681f4;margin-top:10px" Raised="true" @onclick="showMatrix">set matrixes</MatButton>        
+
+        <!-- solid line-->
+        <hr />
 
     <!--Matrixes-->
     <div class="matrixes">
@@ -136,7 +65,7 @@
                 <!-- operation buttons -->
                 <td class ="spacerTd" hidden ="@(!matrixInitCheck)"><!--spacer (hidden)-->
                         <!-- + button-->
-                    <center><button class ="calcBtn" id="addBtn"@onclick="add">+</button></center>
+                    <center><button class ="calcBtn" id="addBtn"@onclick="add">+</button></center> 
                     
                         <!-- - button-->
                         <center><button class ="calcBtn" id="subBtn" @onclick="sub">-</button></center>
@@ -187,7 +116,10 @@
     
     </div> <!--End of Matrixes Div-->  
     
-    <!--<input class="testInput" type="text" @bind="testString"/>-->
+    
+
+    <!--<input class="testInput" type="text" @bind="testString"/>-->    
+    
 </center>
 
 @code {
