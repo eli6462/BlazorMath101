@@ -1,0 +1,101 @@
+table.setTable[b-bcmsxwj9nb] {
+	margin-top: 25px;
+}
+
+input.matrixParam[b-bcmsxwj9nb] {
+	width: 30px;
+	height: 25px;
+}
+
+p.regularText[b-bcmsxwj9nb] {
+	font-family: Arial;
+}
+
+#setText[b-bcmsxwj9nb] {
+	margin-top: 20px;
+	margin-right: 5px;
+}
+/* (my old set button)
+    button.setBtn{
+        margin-top:5px;
+        border-radius:5px;
+        background-color:#4681f4;
+        color:white;        
+        border: none;        
+    }
+    .setBtn:hover{
+        background-color:#3765BF;
+        box-shadow:1px 1px 3px #888888;
+        
+    }
+    .setBtn:active{
+        background-color:#2257BF;
+    }
+    */
+MatButton.matSetBtn[b-bcmsxwj9nb] {
+	background-color: red;
+}
+
+#setBtn[b-bcmsxwj9nb] {
+	background-color: red;
+}
+
+/* matrixes */
+
+div.matrixes[b-bcmsxwj9nb] {
+	margin-top: 25px;
+}
+
+th.tableHead[b-bcmsxwj9nb] {
+	height: 10px;
+}
+
+input.matrixInput[b-bcmsxwj9nb] {
+	width: 30px;
+	height: 25px;
+}
+
+td.spacerTd[b-bcmsxwj9nb] {
+	width: 60px;
+}
+
+button.calcBtn[b-bcmsxwj9nb] {
+	width: 25px;
+	height: 30px;
+	border-radius: 5px;
+	color: #4681f4;
+	border:1.75px solid #4681f4;
+	background-color: white;
+}
+
+.calcBtn:hover[b-bcmsxwj9nb] {
+	background-color: #4681f4;	
+	color: white;
+}
+
+.calcBtn:active[b-bcmsxwj9nb] {
+	background-color: #3765BF;
+}
+
+#addBtn[b-bcmsxwj9nb] {
+	margin-top: 20%;
+}
+
+#subBtn[b-bcmsxwj9nb] {
+	margin-bottom: 20%;
+	margin-top: 10%;
+}
+
+div.waitDiv[b-bcmsxwj9nb] {
+	height: 30px;
+	width: 60px;
+	border-radius: 5px;
+	background-color: lightgrey;
+	margin-left: 25%;
+}
+
+/*
+    input.testInput{
+        width:600px
+    }
+    */
