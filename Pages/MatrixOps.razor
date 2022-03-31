@@ -1,8 +1,9 @@
 ﻿@page "/matrixOps"
+
 <head>
-<style>
-    
-</style>
+    <style>
+
+    </style>
 </head>
 
 <center>
@@ -20,92 +21,117 @@
             <td><input class ="matrixParam" @bind="columns" /></td>
             -->
             <td>
-                <MatTextField @bind-Value="@rows" Label="Rows" Outlined="true" Style="height:35px;width:100px;"></MatTextField>
+                <MatTextField @bind-Value="@rows" Label="Rows" Outlined="true" Style="height:35px;width:100px;">
+                </MatTextField>
                 <br />
-                <MatTextField Style="height:35px;width:100px;margin-top:10px;"  @bind-Value="@columns" Label="Columns" Outlined="true" ></MatTextField>
+                <MatTextField Style="height:35px;width:100px;margin-top:10px;" @bind-Value="@columns" Label="Columns"
+                    Outlined="true"></MatTextField>
             </td>
-            
+
         </tr>
     </table>
 
     <!--Set Menu Button-->
     <!-- (my old button) <button class="setBtn" @onclick="showMatrix"> Set Matrixes</button>  -->
-        <MatButton style="background-color:#4681f4;margin-top:10px" Raised="true" @onclick="showMatrix">set matrixes</MatButton>        
+    <MatButton style="background-color:#4681f4;margin-top:10px" Raised="true" @onclick="showMatrix">set matrixes
+    </MatButton>
 
-        <!-- solid line-->
-        <hr />
+    <!-- solid line-->
+    <hr />
 
     <!--Matrixes-->
     <div class="matrixes">
-        <table class ="matrixes">
+        <table class="matrixes">
             <tr>
                 <!--table head (hidden)-->
-                <th class="tableHead" hidden ="@(!matrixInitCheck)"><center><p class="regularText">Matrix A</p></center></th>
-                <th class="tableHead" hidden ="@(!matrixInitCheck)"></th>
-                <th class="tableHead" hidden ="@(!matrixInitCheck)"><center><p class="regularText">Matrix B</p></center></th>
-                <th class="tableHead" hidden ="@(!matrixInitCheck)"></th>
-                <th class="tableHead" hidden ="@(!matrixInitCheck)"><center><p class="regularText">Result Matrix</p></center></th>
+                <th class="tableHead" hidden="@(!matrixInitCheck)">
+                    <center>
+                        <p class="regularText">Matrix A</p>
+                    </center>
+                </th>
+                <th class="tableHead" hidden="@(!matrixInitCheck)"></th>
+                <th class="tableHead" hidden="@(!matrixInitCheck)">
+                    <center>
+                        <p class="regularText">Matrix B</p>
+                    </center>
+                </th>
+                <th class="tableHead" hidden="@(!matrixInitCheck)"></th>
+                <th class="tableHead" hidden="@(!matrixInitCheck)">
+                    <center>
+                        <p class="regularText">Result Matrix</p>
+                    </center>
+                </th>
             </tr>
             <tr>
-                <td> <!--matrix A-->                                                                             
-                    @if(matrixInitCheck == true)
-                    {                          
-                        for(int i = 0; i < matrixA.GetLength(0); i++)
+                <td>
+                    <!--matrix A-->
+                    @if (matrixInitCheck == true)
+                    {
+                        for (int i = 0; i < matrixA.GetLength(0); i++)
                         {
                             int localI = i;
-                            for( int j = 0; j < matrixA.GetLength(1); j++)
+                            for (int j = 0; j < matrixA.GetLength(1); j++)
                             {
-                                int localJ = j;                                
-                                <input class="matrixInput" @bind="@matrixA[localI,localJ]" type="text" />                               
+                                int localJ = j;
+                                <input class="matrixInput" @bind="@matrixA[localI,localJ]" type="text" />
                             }
                             <br />
                         }
-                    }                                                               
+                    }
                 </td>
                 <!-- operation buttons -->
-                <td class ="spacerTd" hidden ="@(!matrixInitCheck)"><!--spacer (hidden)-->
-                        <!-- + button-->
-                    <center><button class ="calcBtn" id="addBtn"@onclick="add">+</button></center> 
-                    
-                        <!-- - button-->
-                        <center><button class ="calcBtn" id="subBtn" @onclick="sub">-</button></center>
+                <td class="spacerTd" hidden="@(!matrixInitCheck)">
+                    <!--spacer (hidden)-->
+                    <!-- + button-->
+                    <center><button class="calcBtn" id="addBtn" @onclick="add">+</button></center>
+
+                    <!-- - button-->
+                    <center><button class="calcBtn" id="subBtn" @onclick="sub">-</button></center>
                 </td>
 
-                <td> <!--matrix B-->                                        
-                    @if(matrixInitCheck == true)
-                    {                          
-                        for(int i = 0; i < matrixB.GetLength(0); i++)
+                <td>
+                    <!--matrix B-->
+                    @if (matrixInitCheck == true)
+                    {
+                        for (int i = 0; i < matrixB.GetLength(0); i++)
                         {
                             int localI = i;
-                            for( int j = 0; j < matrixB.GetLength(1); j++)
+                            for (int j = 0; j < matrixB.GetLength(1); j++)
                             {
-                                int localJ = j;                                
-                                <input class="matrixInput" @bind="@matrixB[localI,localJ]" type="text" />                               
+                                int localJ = j;
+                                <input class="matrixInput" @bind="@matrixB[localI,localJ]" type="text" />
                             }
                             <br />
                         }
-                    }       
+                    }
                 </td>
 
-                <td class ="spacerTd" hidden ="@(!matrixInitCheck)"><!--spacer (hidden) -->
-                    <center><h4>=</h4></center>
+                <td class="spacerTd" hidden="@(!matrixInitCheck)">
+                    <!--spacer (hidden) -->
+                    <center>
+                        <h4>=</h4>
+                    </center>
                 </td>
-                <td hidden ="@(!resultMatrixInitCheck || !matrixInitCheck)"><!--wait indicator-->
-                    <cener><div class="waitDiv">
-                        <center>...</center>
-                        </div></cener>
-                </td>                
-                <td hidden ="@resultMatrixInitCheck"> <!--matrix Result-->                    
-                    
-                    @if(matrixInitCheck == true)
-                    {                          
-                        for(int i = 0; i < resultMatrix.GetLength(0); i++)
+                <td hidden="@(!resultMatrixInitCheck || !matrixInitCheck)">
+                    <!--wait indicator-->
+                    <cener>
+                        <div class="waitDiv">
+                            <center>...</center>
+                        </div>
+                    </cener>
+                </td>
+                <td hidden="@resultMatrixInitCheck">
+                    <!--matrix Result-->
+
+                    @if (matrixInitCheck == true)
+                    {
+                        for (int i = 0; i < resultMatrix.GetLength(0); i++)
                         {
                             int localI = i;
-                            for( int j = 0; j < resultMatrix.GetLength(1); j++)
+                            for (int j = 0; j < resultMatrix.GetLength(1); j++)
                             {
-                                int localJ = j;                                
-                                <input class="matrixInput" @bind="@resultMatrix[localI,localJ]" type="text" />                               
+                                int localJ = j;
+                                <input class="matrixInput" @bind="@resultMatrix[localI,localJ]" type="text" />
                             }
                             <br />
                         }
@@ -113,22 +139,23 @@
                 </td>
             </tr>
         </table>
-    
-    </div> <!--End of Matrixes Div-->  
-    
-    
 
-    <!--<input class="testInput" type="text" @bind="testString"/>-->    
-    
+    </div>
+    <!--End of Matrixes Div-->
+
+
+
+    <!--<input class="testInput" type="text" @bind="testString"/>-->
+
 </center>
 
 @code {
-    public string? rows,columns;    
-    public int intRows,intColumns;    
+    public string? rows, columns;
+    public int intRows, intColumns;
 
-    public int[,] matrixA,matrixB,resultMatrix;    
+    public int[,]? matrixA, matrixB, resultMatrix;
     public string testString = "";
-    public bool matrixInitCheck = false,resultMatrixInitCheck = true;   
+    public bool matrixInitCheck = false, resultMatrixInitCheck = true;
 
     //private bool hideBox {get;set;} = true;
 
@@ -137,9 +164,9 @@
         intRows = int.Parse(rows);
         intColumns = int.Parse(columns);
 
-        matrixA = new int[intRows,intColumns];
-        matrixB = new int[intRows,intColumns];
-        resultMatrix = new int[intRows,intColumns];        
+        matrixA = new int[intRows, intColumns];
+        matrixB = new int[intRows, intColumns];
+        resultMatrix = new int[intRows, intColumns];
 
         matrixInitCheck = true;
         resultMatrixInitCheck = true;
