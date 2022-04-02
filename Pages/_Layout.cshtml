@@ -8,17 +8,30 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <base href="~/" />
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" /> 
     <link href="css/site.css" rel="stylesheet" />
-    <link href="BlazorApp.styles.css" rel="stylesheet" />
-    <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
+    <link href="BlazorApp.styles.css" rel="stylesheet" />    
+    <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />   
+    <!-- mudblazor -->
+    <!-- 
+        <link href="BlazorMaterialUI.styles.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" /> 
+    -->
 
-    <!-- <link rel="stylesheet" href="C:\Users\User\Documents\GitHub\BlazorMath101\Styles\StyleSheet.css"> -->
-    <!-- <link rel="stylesheet" href="../Styles/StyleSheet.css"> -->
+    <!-- MDB-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    />
+    <link rel="stylesheet" href="css/mdb.min.css" />    
 </head>
 <body>
     @RenderBody()
-
     <div id="blazor-error-ui">
         <environment include="Staging,Production">
             An error has occurred. This application may no longer respond until reloaded.
@@ -28,8 +41,27 @@
         </environment>
         <a href="" class="reload">Reload</a>
         <a class="dismiss">🗙</a>
-    </div>
-
+    </div>     
     <script src="_framework/blazor.server.js"></script>
+    
+    <!-- mud blazor-->
+    <script src="_content/MudBlazor/MudBlazor.min.js"></script>
+    <!-- MDB-->
+    <script type="text/javascript" src="js/mdb.min.js"></script>    
+    <script type="text/javascript"></script>
+
+    <!--my material design text-input-->
+    <!-- previews version "let input_element = document.querySelector("input");"-->
+    <script type="text/javascript">
+        function inputBox(){
+            let input_element = document.querySelector("input");
+
+        input_element.addEventListener("keyup", () => {
+            input_element.setAttribute("value", input_element.value);
+        });
+        }
+        
+    </script>
+    
 </body>
 </html>

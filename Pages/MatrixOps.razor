@@ -1,9 +1,22 @@
 ﻿@page "/matrixOps"
 
+
+
 <head>
     <style>
 
     </style>
+    
+    <!-- MDB-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    />
+    <link rel="stylesheet" href="css/mdb.min.css" />
 </head>
 
 <center>
@@ -21,13 +34,23 @@
             <td><input class ="matrixParam" @bind="columns" /></td>
             -->
             <td>
-                <MatTextField @bind-Value="@rows" Label="Rows" Outlined="true" Style="height:35px;width:100px;">
+                <MatTextField @bind-Value="rows" Label="Rows" Outlined="true" Style="height:35px;width:100px;">
                 </MatTextField>
                 <br />
-                <MatTextField Style="height:35px;width:100px;margin-top:10px;" @bind-Value="@columns" Label="Columns"
+                <MatTextField @bind-Value="columns"Style="height:35px;width:100px;margin-top:10px;" Label="Columns"
                     Outlined="true"></MatTextField>
             </td>
+            <td>
+                    <div class="input-contain">
+                        <input type="text" id="fname" name="fname" autocomplete="off" value="" aria-labelledby="placeholder-fname">
+                        <label class="placeholder-text" for="fname" id="placeholder-fname">
+                            <div class="text">Rows</div>
+                        </label>
+                    </div>
+            </td>
 
+            
+                
         </tr>
     </table>
 
@@ -149,6 +172,8 @@
 
 </center>
 
+
+
 @code {
     public string? rows, columns;
     public int intRows, intColumns;
@@ -158,6 +183,9 @@
     public bool matrixInitCheck = false, resultMatrixInitCheck = true;
 
     //private bool hideBox {get;set;} = true;
+
+    public string? testRows = null;
+    public int? intTestRows = null;
 
     public void showMatrix()
     {
@@ -187,4 +215,6 @@
         resultMatrix = BlazorApp.Handlers.MatrixHandler.subMatrixes(matrixA, matrixB);
         resultMatrixInitCheck = false;
     }
+
+    
 }
