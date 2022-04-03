@@ -13,14 +13,18 @@
     <!--Set Menu-->
     <table class="setTable">
         <tr>
-            <!-- (old)            
-            <td><p class="regularText" id ="setText">Matrix rows:</p></td>
-            <td><input class ="matrixParam" @bind="rows" /></td>
-            <td style ="width:30px;"></td>
-            <td><p class="regularText" id ="setText">Matrix columns:</p></td>
-            <td><input class ="matrixParam" @bind="columns" /></td>
-            -->
+            <!--head-->            
+            <td colspan="3">
+                <center>
+                    <p class="regularText"><b>Matrixes A & B</b></p>
+                </center>
+            </td>
+        </tr>
+        <tr >
+            <div id="inputsDiv">
+                <!--labels+inputs-->
             <td>
+<<<<<<< Updated upstream
                 <MatTextField @bind-Value="@rows" Label="Rows" Outlined="true" Style="height:35px;width:100px;">
                 </MatTextField>
                 <br />
@@ -28,6 +32,31 @@
                     Outlined="true"></MatTextField>
             </td>
 
+=======
+                <p class="regularText" id ="setTextRows">Rows</p>
+                <p class="regularText" id ="setTextColumns">Columns</p>                
+            </td>
+            <td style ="width:15px;">
+
+            </td>            
+            <td>
+                <input class ="matrixParam"  @bind="rows"/>
+                <br />
+                <input class ="matrixParam" id="columnInput" @bind="columns" />                
+            </td>
+            </div>
+            
+                        
+            <!--Materil design textbox-->
+            <!--
+                    <div class="input-contain">
+                        <input type="text" id="fname" name="fname" autocomplete="off" value="" aria-labelledby="placeholder-fname">
+                        <label class="placeholder-text" for="fname" id="placeholder-fname">
+                            <div class="text">Rows</div>
+                        </label>
+                    </div>            
+            -->                            
+>>>>>>> Stashed changes
         </tr>
     </table>
 

@@ -1,19 +1,102 @@
 table.setTable[b-bcmsxwj9nb] {
-	margin-top: 25px;
+	margin-top: 25px;	
+}
+<<<<<<< Updated upstream
+
+=======
+/* Material Design input */
+/*
+.input-contain {
+	position: relative;
 }
 
+input {
+	height: 35px;
+	width: 100px;
+	border: 2px solid black;
+	border-radius: 5px;
+}
+
+	input:focus {
+		outline: none;
+		border-color: blueviolet;
+	}
+
+		
+		input:focus + .placeholder-text .text, :not(input[value=""]) + .placeholder-text .text {
+			background-color: white;
+			font-size: 11.8px;
+			color: black;
+			transform: translate(0, -130%);
+		}
+
+		input:focus + .placeholder-text .text {
+			border-color: blueviolet;
+			color: blueviolet;
+		}
+
+.placeholder-text {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: -10px;
+	right: 0;
+	border: 3px solid transparent;
+	background-color: transparent;
+	pointer-events: none;
+	display: flex;
+	align-items: center;
+	font-family: arial;
+}
+
+.text {
+	font-size: 15px;
+	padding: 0 4px;
+	background-color: transparent;
+	transform: translate(0);
+	color: black;
+	transition: transform 0.15s ease-out, font-size 0.15s ease-out, background-color 0.2s ease-out, color 0.15s ease-out;
+}
+
+input, .placeholder-text {
+	font-size: 15px;
+	padding: 0 12.8px;
+}
+
+@media (max-width: 100px) {
+	input {
+		width: 70vw;
+	}
+}
+*/
+/* END OF Material Design input */
+
+#inputsDiv[b-bcmsxwj9nb] {
+	margin-top: 10px;
+}
+>>>>>>> Stashed changes
 input.matrixParam[b-bcmsxwj9nb] {
 	width: 30px;
 	height: 25px;
+	border-radius:5px;
 }
-
+p[b-bcmsxwj9nb]{
+	margin:0px;
+}
 p.regularText[b-bcmsxwj9nb] {
 	font-family: Arial;
 }
 
-#setText[b-bcmsxwj9nb] {
-	margin-top: 20px;
-	margin-right: 5px;
+#setTextRows[b-bcmsxwj9nb] {
+	margin-top: 0px;
+	margin-right: 0px;
+}
+#setTextColumns[b-bcmsxwj9nb]{
+	margin-top:5px;
+	margin-right:0px;
+}
+#columnInput[b-bcmsxwj9nb]{
+	margin-top:5px;
 }
 /* (my old set button)
     button.setBtn{
@@ -52,7 +135,7 @@ th.tableHead[b-bcmsxwj9nb] {
 
 input.matrixInput[b-bcmsxwj9nb] {
 	width: 30px;
-	height: 25px;
+	height: 25px;	
 }
 
 td.spacerTd[b-bcmsxwj9nb] {
