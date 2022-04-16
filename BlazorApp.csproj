@@ -10,4 +10,8 @@
     <PackageReference Include="MatBlazor" Version="2.8.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Styles\" />
+  </ItemGroup>
+
 </Project>

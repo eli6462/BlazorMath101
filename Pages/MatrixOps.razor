@@ -9,45 +9,82 @@
 <center>
 
     <h3>MatrixOps</h3>
-
+                
     <!--Set Menu-->
-    <table class="setTable">
-        <tr>
-            <!--head-->            
-            <td colspan="3">
-                <center>
-                    <p class="regularText"><b>Matrixes A & B</b></p>
-                </center>
-            </td>
-        </tr>
-        <tr >
-            <div id="inputsDiv">
-                <!--labels+inputs-->
-            <td>
-<<<<<<< Updated upstream
-                <MatTextField @bind-Value="@rows" Label="Rows" Outlined="true" Style="height:35px;width:100px;">
-                </MatTextField>
-                <br />
-                <MatTextField Style="height:35px;width:100px;margin-top:10px;" @bind-Value="@columns" Label="Columns"
-                    Outlined="true"></MatTextField>
-            </td>
-
-=======
-                <p class="regularText" id ="setTextRows">Rows</p>
-                <p class="regularText" id ="setTextColumns">Columns</p>                
-            </td>
-            <td style ="width:15px;">
-
-            </td>            
-            <td>
-                <input class ="matrixParam"  @bind="rows"/>
-                <br />
-                <input class ="matrixParam" id="columnInput" @bind="columns" />                
-            </td>
+            <!--radio buttons-->
+            <div class="radioBtnDiv">
+                <input @onclick="multCheckFalse" checked type="radio" class="opsRadio" id="addSub" name="choseOp" >
+                <label  class ="opsRadioLabel" for="html">Add/Subtract</label><br> 
+                <input @onclick="multCheckTrue" type="radio" class="opsRadio" id="mult" name="choseOp" >
+                <label class ="opsRadioLabel" for="html">Multiplication</label><br> 
             </div>
-            
-                        
-            <!--Materil design textbox-->
+    <table class="mainSetTable">                                   
+        <!--set matrix A-->
+        <td>            
+            <table class="miniSetTable">
+            <tr>
+                <!--head-->                
+                <td colspan="3">
+                    <center>
+                        <p class="regularText" ><b>@setMatrixAText</b></p>
+                    </center>
+                </td>        
+            </tr>
+            <tr >
+                <!--labels+inputs-->   
+                <div id="inputsDiv">                
+                    <td>                      
+                        <p class="regularText" id ="setTextRows">Rows</p>
+                        <p class="regularText" id ="setTextColumns">Columns</p>                
+                    </td>
+                    <td style ="width:15px;">
+
+                    </td>            
+                    <td>
+                        <input class ="matrixParam"  @bind="rowsA"/>
+                        <br />
+                        <input class ="matrixParam" id="columnInput" @bind="columnsARowsB" />                
+                    </td>
+                </div>                                                                     
+
+            </tr>
+        </table>
+        </td>
+        <!--set matrix B-->
+        <td hidden=@hideMatrixB>
+            <table class="miniSetTable" id="matrixBsetTable">
+            <tr> 
+                <!--head-->                
+                <td colspan="3">
+                    <center>
+                        <p class="regularText" ><b>Matrix B</b></p>
+                    </center>
+                </td>            
+            </tr>
+            <tr >
+                <!--labels+inputs-->   
+                <div id="inputsDiv">                
+                    <td>                      
+                        <p class="regularText" id ="setTextRows">Rows</p>
+                        <p class="regularText" id ="setTextColumns">Columns</p>                
+                    </td>
+                    <td style ="width:15px;">
+
+                    </td>            
+                    <td>
+                        <input class ="matrixParam"  @bind="columnsARowsB"/>
+                        <br />
+                        <input class ="matrixParam" id="columnInput" @bind="columnsB" />                
+                    </td>
+                </div>                                                                     
+
+            </tr>
+        </table>
+        </td>
+    </table>
+        
+
+    <!--Materil design textbox-->
             <!--
                     <div class="input-contain">
                         <input type="text" id="fname" name="fname" autocomplete="off" value="" aria-labelledby="placeholder-fname">
@@ -55,10 +92,7 @@
                             <div class="text">Rows</div>
                         </label>
                     </div>            
-            -->                            
->>>>>>> Stashed changes
-        </tr>
-    </table>
+            -->      
 
     <!--Set Menu Button-->
     <!-- (my old button) <button class="setBtn" @onclick="showMatrix"> Set Matrixes</button>  -->
@@ -179,9 +213,15 @@
 </center>
 
 @code {
-    public string? rows, columns;
-    public int intRows, intColumns;
+    // set menu
+    public bool hideMatrixB = true;
 
+    public string? rowsA, columnsARowsB,columnsB;
+    public int intRowsA, intColumnsARowsB,intColumnsB;
+
+    public string setMatrixAText = "Matrixes A & B";
+
+    // matrix menu
     public int[,]? matrixA, matrixB, resultMatrix;
     public string testString = "";
     public bool matrixInitCheck = false, resultMatrixInitCheck = true;
@@ -190,15 +230,34 @@
 
     public void showMatrix()
     {
-        intRows = int.Parse(rows);
-        intColumns = int.Parse(columns);
 
-        matrixA = new int[intRows, intColumns];
-        matrixB = new int[intRows, intColumns];
-        resultMatrix = new int[intRows, intColumns];
+        if (hideMatrixB == true)
+        {
+            intRowsA = int.Parse(rowsA);
+            intColumnsARowsB = int.Parse(columnsARowsB);
 
-        matrixInitCheck = true;
-        resultMatrixInitCheck = true;
+            matrixA = new int[intRowsA, intColumnsARowsB];
+            matrixB = new int[intRowsA, intColumnsARowsB];
+            resultMatrix = new int[intRowsA, intColumnsARowsB];
+
+            matrixInitCheck = true;
+            resultMatrixInitCheck = true;
+
+        }
+        else
+        {
+            intRowsA = int.Parse(rowsA);
+            intColumnsARowsB = int.Parse(columnsARowsB);
+            intColumnsB = int.Parse(columnsB);
+
+            matrixA = new int[intRowsA, intColumnsARowsB];
+            matrixB = new int[intColumnsARowsB, intColumnsB];
+            resultMatrix = new int[intRowsA, intColumnsARowsB];
+
+            matrixInitCheck = true;
+            resultMatrixInitCheck = true;
+        }
+       
 
         //hideBox = !hideBox;
         //hideBox = !hideBox;
@@ -215,5 +274,16 @@
     {
         resultMatrix = BlazorApp.Handlers.MatrixHandler.subMatrixes(matrixA, matrixB);
         resultMatrixInitCheck = false;
+    }
+
+    private void multCheckTrue()
+    {
+        hideMatrixB = false;
+        setMatrixAText = "Matrix A";
+    }
+    private void multCheckFalse()
+    {
+        hideMatrixB = true;
+        setMatrixAText = "Matrixes A & B";
     }
 }

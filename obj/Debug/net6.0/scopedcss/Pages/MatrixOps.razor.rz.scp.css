@@ -1,9 +1,11 @@
-table.setTable[b-bcmsxwj9nb] {
-	margin-top: 25px;	
+table.miniSetTable[b-bcmsxwj9nb] {
+	margin-top: 20px;	
 }
-<<<<<<< Updated upstream
 
-=======
+table[b-bcmsxwj9nb],td[b-bcmsxwj9nb]{
+	border: 1px solid white;
+}
+
 /* Material Design input */
 /*
 .input-contain {
@@ -71,10 +73,22 @@ input, .placeholder-text {
 */
 /* END OF Material Design input */
 
+
+div.radioBtnDiv[b-bcmsxwj9nb]{
+	margin-top:30px;
+}
+
+
+#matrixBsetTable[b-bcmsxwj9nb] {
+	margin-left: 15px;
+}
+	label.opsRadioLabel[b-bcmsxwj9nb] {
+		margin-right: 15px;
+	}
 #inputsDiv[b-bcmsxwj9nb] {
 	margin-top: 10px;
 }
->>>>>>> Stashed changes
+
 input.matrixParam[b-bcmsxwj9nb] {
 	width: 30px;
 	height: 25px;

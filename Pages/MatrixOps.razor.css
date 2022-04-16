@@ -1,9 +1,11 @@
-table.setTable {
-	margin-top: 25px;	
+table.miniSetTable {
+	margin-top: 20px;	
 }
-<<<<<<< Updated upstream
 
-=======
+table,td{
+	border: 1px solid white;
+}
+
 /* Material Design input */
 /*
 .input-contain {
@@ -71,10 +73,22 @@ input, .placeholder-text {
 */
 /* END OF Material Design input */
 
+
+div.radioBtnDiv{
+	margin-top:30px;
+}
+
+
+#matrixBsetTable {
+	margin-left: 15px;
+}
+	label.opsRadioLabel {
+		margin-right: 15px;
+	}
 #inputsDiv {
 	margin-top: 10px;
 }
->>>>>>> Stashed changes
+
 input.matrixParam {
 	width: 30px;
 	height: 25px;
